@@ -2,23 +2,31 @@ CC = cc
 FLAGS = -Wall -Wextra -Werror
 
 SRCS = src/client.c src/server.c src/utils.c
-OBG = $(SRCS:%.c=$(OBJDIR)/%.o)
-
 OBJDIR = obj
+OBG = $(SRCS:src/%.c=$(OBJDIR)/%.o)
+
 CLIENT = $(OBJDIR)/client.o
 SERVER = $(OBJDIR)/server.o
+UTILS = $(OBJDIR)/utils.o
 
-all: $(OBJDIR) client server
+$(OBJDIR)/%.o: src/%.c | $(OBJDIR)
+	$(CC) $(FLAGS) -c $< -o $@
 
-	$(OBJDIR): $(OBG)
-		mkdir $(OBJDIR)
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
 
-	$(OBJDIR)/%.o: src/%.c | $(OBJDIR)
-		$(CC) $(FLAGS) -c $< -o $@
+all: client server
 
+client: $(OBG)
+	$(CC) $(FLAGS) $(UTILS) $(CLIENT) -o client
 
-	client: $(OBG)
-		$(CC) $(FLAGS) $(CLIENT) -o client
+server: $(OBG)
+	$(CC) $(FLAGS) $(UTILS) $(SERVER) -o server
 
-	server: $(OBG)
-		$(CC) $(FLAGS) $(SERVER) -o server
+clean:
+	rm -rf $(OBJDIR)
+
+fclean: clean
+	rm -f client server
+
+re: fclean all
