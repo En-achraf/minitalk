@@ -6,7 +6,14 @@
 /*   By: acennadi <acennadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 16:03:02 by acennadi          #+#    #+#             */
-/*   Updated: 2025/04/04 16:03:03 by acennadi         ###   ########.fr       */
+/*   Updated: 2025/04/04 22:31:29 by acennadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/minitalk.h"
+
+int main(void)
+{
+    ft_putnbr_fd(12, 1);
+    return 0;
+}

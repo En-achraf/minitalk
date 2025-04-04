@@ -1,5 +1,5 @@
 #ifndef MINITALK_H
-#define MINITAL_H
+#define MINITALK_H
 
 //includes
 #include <unistd.h>

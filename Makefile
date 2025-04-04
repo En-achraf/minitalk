@@ -9,19 +9,20 @@ CLIENT = $(OBJDIR)/client.o
 SERVER = $(OBJDIR)/server.o
 UTILS = $(OBJDIR)/utils.o
 
+
+all: client server
+
 $(OBJDIR)/%.o: src/%.c | $(OBJDIR)
 	$(CC) $(FLAGS) -c $< -o $@
 
 $(OBJDIR):
 	mkdir -p $(OBJDIR)
 
-all: client server
-
 client: $(OBG)
-	$(CC) $(FLAGS) $(UTILS) $(CLIENT) -o client
+	$(CC) $(FLAGS) -o client $(UTILS) $(CLIENT) 
 
 server: $(OBG)
-	$(CC) $(FLAGS) $(UTILS) $(SERVER) -o server
+	$(CC) $(FLAGS) -o server $(UTILS) $(SERVER) 
 
 clean:
 	rm -rf $(OBJDIR)

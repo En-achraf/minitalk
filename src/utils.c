@@ -6,11 +6,11 @@
 /*   By: acennadi <acennadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 16:00:44 by acennadi          #+#    #+#             */
-/*   Updated: 2025/04/04 16:02:48 by acennadi         ###   ########.fr       */
+/*   Updated: 2025/04/04 22:26:37 by acennadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "../includes/minitalk.h"
 
 size_t	ft_strlen(const char *s)
 {
@@ -22,6 +22,10 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
 
 void	ft_putnbr_fd(int n, int fd)
 {
