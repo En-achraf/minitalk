@@ -6,14 +6,13 @@
 /*   By: acennadi <acennadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 16:03:02 by acennadi          #+#    #+#             */
-/*   Updated: 2025/04/04 22:31:29 by acennadi         ###   ########.fr       */
+/*   Updated: 2025/04/04 22:36:21 by acennadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minitalk.h"
 
-int main(void)
+int	main(void)
 {
-    ft_putnbr_fd(12, 1);
-    return 0;
+	return (0);
 }
