@@ -9,5 +9,6 @@
 //functions
 void	ft_putnbr_fd(int n, int fd);
 size_t	ft_strlen(const char *s);
+void	ft_putstr_fd(char *s, int fd);
 
 #endif 
