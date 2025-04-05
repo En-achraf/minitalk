@@ -6,7 +6,7 @@
 /*   By: acennadi <acennadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 16:03:04 by acennadi          #+#    #+#             */
-/*   Updated: 2025/04/05 12:22:15 by acennadi         ###   ########.fr       */
+/*   Updated: 2025/04/05 15:21:33 by acennadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	send_signal(char *message, int id_server)
 	int	i;
 	int	letter;
 
-	i = 0;
 	letter = 0;
 	while (message[letter])
 	{
+		i = 0;
 		while (i < 8)
 		{
 			if ((unsigned int)(message[letter] >> (7 - i) & 1) == 0)

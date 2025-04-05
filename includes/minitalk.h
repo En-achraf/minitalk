@@ -15,9 +15,9 @@
 
 // includes
 # include <signal.h>
+# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
 
 // functions
 void	ft_putnbr_fd(int n, int fd);
