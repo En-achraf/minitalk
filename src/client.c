@@ -6,39 +6,33 @@
 /*   By: acennadi <acennadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 16:03:04 by acennadi          #+#    #+#             */
-/*   Updated: 2025/04/05 15:21:33 by acennadi         ###   ########.fr       */
+/*   Updated: 2025/04/05 17:42:16 by acennadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minitalk.h"
 
-void	send_signal(char *message, int id_server)
+void	send_char(char c, int id_server)
 {
 	int	i;
-	int	letter;
 
-	letter = 0;
-	while (message[letter])
+	i = 7;
+	while (i >= 0)
 	{
-		i = 0;
-		while (i < 8)
-		{
-			if ((unsigned int)(message[letter] >> (7 - i) & 1) == 0)
-				kill(id_server, SIGUSR1);
-			if ((unsigned int)(message[letter] >> (7 - i) & 1) == 1)
-				kill(id_server, SIGUSR2);
-			usleep(50);
-			i++;
-		}
-		letter++;
+		if (((c >> i) & 1) == 0)
+			kill(id_server, SIGUSR1);
+		if (((c >> i) & 1) == 1)
+			kill(id_server, SIGUSR2);
+		usleep(700);
+		i--;
 	}
-	i = 0;
-	while (i < 8)
-	{
-		kill(id_server, SIGUSR1);
-		usleep(50);
-		i++;
-	}
+}
+
+void	send_signal(char *message, int id_server)
+{
+	while (message && *message)
+		send_char(*message++, id_server);
+	send_char('\0', id_server);
 }
 
 int	main(int ac, char **av)
