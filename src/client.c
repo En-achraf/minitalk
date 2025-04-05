@@ -6,7 +6,7 @@
 /*   By: acennadi <acennadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 16:03:04 by acennadi          #+#    #+#             */
-/*   Updated: 2025/04/05 11:31:02 by acennadi         ###   ########.fr       */
+/*   Updated: 2025/04/05 12:22:15 by acennadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	send_signal(char *message, int id_server)
 	{
 		while (i < 8)
 		{
-			if ((unsigned int)(message[letter] >> (i - 7) & 1) == 0)
+			if ((unsigned int)(message[letter] >> (7 - i) & 1) == 0)
 				kill(id_server, SIGUSR1);
-			if ((unsigned int)(message[letter] >> (i - 7) & 1) == 1)
+			if ((unsigned int)(message[letter] >> (7 - i) & 1) == 1)
 				kill(id_server, SIGUSR2);
 			usleep(50);
 			i++;
