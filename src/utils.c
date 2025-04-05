@@ -6,7 +6,7 @@
 /*   By: acennadi <acennadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 16:00:44 by acennadi          #+#    #+#             */
-/*   Updated: 2025/04/04 22:49:16 by acennadi         ###   ########.fr       */
+/*   Updated: 2025/04/05 11:19:58 by acennadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
+
 void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
