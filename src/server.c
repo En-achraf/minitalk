@@ -6,7 +6,7 @@
 /*   By: acennadi <acennadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 16:03:02 by acennadi          #+#    #+#             */
-/*   Updated: 2025/04/05 11:19:31 by acennadi         ###   ########.fr       */
+/*   Updated: 2025/04/05 11:30:51 by acennadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int	main(void)
 {
+	ft_putstr_fd("PID number : ", 1);
+	ft_putnbr_fd(getpid, 1);
 	return (0);
 }
