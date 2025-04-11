@@ -31,3 +31,7 @@ fclean: clean
 	rm -f client server
 
 re: fclean all
+
+.PHONY: clean
+
+.SECANDRY: $(OBJDIR)

@@ -6,7 +6,7 @@
 /*   By: acennadi <acennadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 16:03:04 by acennadi          #+#    #+#             */
-/*   Updated: 2025/04/05 17:42:16 by acennadi         ###   ########.fr       */
+/*   Updated: 2025/04/11 11:06:19 by acennadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	send_char(char c, int id_server)
 		usleep(700);
 		i--;
 	}
-}
+} 
 
 void	send_signal(char *message, int id_server)
 {
