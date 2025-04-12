@@ -6,7 +6,7 @@
 /*   By: acennadi <acennadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 11:07:41 by acennadi          #+#    #+#             */
-/*   Updated: 2025/04/12 16:22:00 by acennadi         ###   ########.fr       */
+/*   Updated: 2025/04/12 16:47:44 by acennadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,10 @@ int	main(int ac, char **av)
 	if (ac != 3)
 		return (ft_putstr_fd("Error : should be./client  <PID> 'MESSAGE'", 2),
 			1);
-	if (!arg)
+	if (arg <= 1 || arg > 4194304)
 		return (ft_putstr_fd("invalid <PID>\n", 2), 0);
 	if (!*message)
-		return (ft_putstr_fd("invalid <PID>\n", 2), 0);
+		return (ft_putstr_fd("invalid message\n", 2), 0);
 	(void)message;
 	send_sig(arg, message);
 	return (0);

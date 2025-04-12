@@ -6,7 +6,7 @@
 /*   By: acennadi <acennadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 16:00:44 by acennadi          #+#    #+#             */
-/*   Updated: 2025/04/12 16:04:18 by acennadi         ###   ########.fr       */
+/*   Updated: 2025/04/12 16:39:47 by acennadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ int	ft_atoi(const char *str)
 	res = 0;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
+		if (res > 2147483647 || res < -2147483648)
+			return (0);
 		res = res * 10 + (str[i] - 48);
 		i++;
 	}
